@@ -12,9 +12,12 @@ export function setBgColor (age) {
 }
 
 export function getBgColorEmotion({ age }) {
+  const numberAge = Number.parseInt(age)
+  // console.log("age:",age);
   let bgColor = "#ffc7d1";
-  if (age > 6) bgColor = "#f1f13c";
-  if (age > 9) bgColor = "#abfcab";
-  if (Number.isNaN(age)) bgColor = "#b4d7e4;"
+  if (numberAge > 6) bgColor = "#f1f13c";
+  if (numberAge > 9) bgColor = "#abfcab";
+  if (Number.isNaN(numberAge)) bgColor = "#b4d7e4;"
+  // console.log("bgColor:",bgColor)
   return bgColor;
 }
