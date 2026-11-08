@@ -10,3 +10,11 @@ export function setBgColor (age) {
   return classNames;
 
 }
+
+export function getBgColorEmotion({ age }) {
+  let bgColor = "#ffc7d1";
+  if (age > 6) bgColor = "#f1f13c";
+  if (age > 9) bgColor = "#abfcab";
+  if (Number.isNaN(age)) bgColor = "#b4d7e4;"
+  return bgColor;
+}
