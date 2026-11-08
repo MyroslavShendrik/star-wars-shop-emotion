@@ -1,6 +1,8 @@
 import { StrictMode } from 'react'
 import { BrowserRouter } from "react-router-dom";
 import { createRoot } from 'react-dom/client'
+import { ThemeProvider } from "@emotion/react"; //! Emotion Theme
+import { theme } from "@/constants";
 import App from '@/componets/App/App.jsx'
 
 //todo: var.1  Підключення Normalize (npm i normalize.css)
@@ -13,7 +15,9 @@ import './index.css'; //! підключення Normalize і Reset CSS
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter basename="/star-wars-shop-emotion">
-      <App />
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
      </BrowserRouter>
   </StrictMode>,
 );

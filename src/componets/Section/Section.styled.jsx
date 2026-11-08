@@ -1,8 +1,8 @@
 import styled from "@emotion/styled"
 
 export const Title = styled.h2`
-    margin-bottom: 24px;
+    margin-bottom:${props => props.theme.spacing(6)};
     font-size: 48px;
     text-align: center;
-    color: darkblue;
+    color: ${props => props.theme.fontColor.mainTitle};
 `
