@@ -4,7 +4,7 @@ import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-    base: 'star-wars-shop', //! <-- ім'я репозиторію
+    base: 'star-wars-shop-emotion', //! <-- ім'я репозиторію
       resolve: {
     alias: {
       // '@': path.resolve(__dirname, 'src'),

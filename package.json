@@ -1,12 +1,12 @@
 {
-  "name": "star-wars-shop",
-  "homepage": "https://MyroslavShendrik.github.io/star-wars-shop",
+  "name": "star-wars-shop-emotion",
+  "homepage": "https://MyroslavShendrik.github.io/star-wars-shop-emotion",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/star-wars-shop/",
+    "build": "vite build --base=/star-wars-shop-emotion/",
     "lint": "oxlint",
     "preview": "vite preview"
   },

@@ -12,7 +12,7 @@ import './index.css'; //! підключення Normalize і Reset CSS
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/star-wars-shop">
+    <BrowserRouter basename="/star-wars-shop-emotion">
       <App />
      </BrowserRouter>
   </StrictMode>,
