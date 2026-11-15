@@ -1,59 +1,112 @@
 import styled from "@emotion/styled";
 
 export const ItemTitle = styled.h3`
-  margin-bottom: 12px;
-  padding: 12px 16px;
-  font-size: 32px;
+  margin-bottom: ${({ theme }) => theme.spacing(3)};
+  padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(4)};
+  font-size: ${({ theme }) => theme.fontSizes.itemTitle};
   text-align: center;
-  border-radius: 8px;
-  background-color: yellow;
-  color: blue;
+  border-radius: ${({ theme }) => theme.radii.sm};
+  background-color: ${({ theme }) => theme.colors.bg.itemTitle};
+  color: ${({ theme }) => theme.colors.font.itemTitle};
 `;
 
 export const ImageTitle = styled.h4`
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing(2)};
   font-style: italic;
+
+  svg {
+    color: ${({ theme }) => theme.colors.icon.imageTitle};
+  }
 `;
 
 export const TextField = styled.p`
-  font-size: 18px;
-  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSizes.text};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+`;
+
+//! Обгортка для іконки перед назвою поля
+export const FieldIcon = styled.span`
+  display: inline-flex;
+  margin-right: ${({ theme }) => theme.spacing(2)};
+  vertical-align: middle;
+  color: ${({ theme }) => theme.colors.icon.textField};
 `;
 
 export const TextFieldValue = styled.span`
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeights.regular};
   font-style: italic;
+`;
+
+export const FeatureList = styled.ul`
+  display: grid;
+  gap: ${({ theme }) => theme.spacing(1)};
+  margin-top: ${({ theme }) => theme.spacing(1)};
+`;
+
+export const FeatureItem = styled.li`
+  display: flex;
+  align-items: flex-start;
+  gap: ${({ theme }) => theme.spacing(2)};
+
+  svg {
+    flex-shrink: 0;
+    margin-top: ${({ theme }) => theme.spacing(1)};
+    color: ${({ theme }) => theme.colors.icon.feature};
+  }
 `;
 
 export const AdditionalImageBox = styled.div`
   display: flex;
-  gap: 10px;
+  gap: ${({ theme }) => theme.spacing(2.5)};
   flex-wrap: wrap;
-  padding: 8px;
-  border-radius: 8px;
-  background-color: gray;
+  padding: ${({ theme }) => theme.spacing(2)};
+  border-radius: ${({ theme }) => theme.radii.sm};
+  background-color: ${({ theme }) => theme.colors.bg.additionalImageBox};
 `;
 
 export const AdditionalImage = styled.img`
-  max-width: calc((100% - 10px) / 2);
-  border-radius: 14px;
+  max-width: calc((100% - ${({ theme }) => theme.spacing(2.5)}) / 2);
+  border-radius: ${({ theme }) => theme.radii.lg};
 `;
 
 export const Button = styled.button`
-  width: 70%;
-  margin: 20px auto;
-  padding: 16px 32px;
-  display: inline-block;
+  width: ${({ theme }) => theme.sizes.buttonWidth};
+  margin: ${({ theme }) => theme.spacing(5)} auto;
+  padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(8)};
+  display: flex;
   align-items: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow";
-  font-weight: 700;
-  font-size: 1.5rem;
-  border-radius: 12px;
-  color: #ffffff;
-  background-color: #008080;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing(3)};
+  font-family: ${({ theme }) => theme.fontFamily.button};
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  font-size: ${({ theme }) => theme.fontSizes.button};
+  border-radius: ${({ theme }) => theme.radii.md};
+  color: ${({ theme }) => theme.colors.font.button};
+  background-color: ${({ theme }) => theme.colors.bg.button};
   cursor: pointer;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.2),
-    4px 4px 8px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 16px 8px rgba(0, 0, 0, 0.3),
-    0 8px 16px rgba(0, 0, 0, 0.9);
+  text-shadow: ${({ theme }) => theme.shadows.buttonText};
+  box-shadow: ${({ theme }) => theme.shadows.button};
+  transition: background-color ${({ theme }) => theme.transition};
+
+  svg {
+    color: ${({ theme }) => theme.colors.icon.button};
+    transition: color ${({ theme }) => theme.transition};
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: ${({ theme }) => theme.colors.bg.buttonHover};
+
+    svg {
+      color: ${({ theme }) => theme.colors.icon.buttonHover};
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${({ theme }) => theme.colors.border.buttonFocus};
+    outline-offset: 2px;
+  }
 `;

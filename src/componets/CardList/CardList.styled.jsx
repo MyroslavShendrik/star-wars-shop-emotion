@@ -1,20 +1,24 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
-import {getBgColorEmotion} from '@/utils'
+import { getBgColorEmotion } from "@/utils";
 
 export const List = styled.ul`
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px;
-    display: grid;
-    grid-template-columns:repeat(auto-fit, minmax(445px, 1fr)) ;
-    gap: 32px;
-    outline: 1px solid red;
-`
+  margin-left: ${({ theme }) => theme.spacing(2.5)};
+  margin-right: ${({ theme }) => theme.spacing(2.5)};
+  padding: ${({ theme }) => theme.spacing(2.5)};
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(${({ theme }) => theme.sizes.cardMinWidth}, 1fr)
+  );
+  gap: ${({ theme }) => theme.spacing(8)};
+  outline: 1px solid ${({ theme }) => theme.colors.border.list};
+`;
+
 export const Item = styled.li`
-    display: grid;
-    gap: 12px;
-    padding: 10px;
-    outline: 1px solid grey;
-    background-color: ${getBgColorEmotion};
-`
+  display: grid;
+  gap: ${({ theme }) => theme.spacing(3)};
+  padding: ${({ theme }) => theme.spacing(2.5)};
+  outline: 1px solid ${({ theme }) => theme.colors.border.item};
+  background-color: ${getBgColorEmotion};
+`;

@@ -11,13 +11,14 @@ export function setBgColor (age) {
 
 }
 
-export function getBgColorEmotion({ age }) {
-  const numberAge = Number.parseInt(age)
-  // console.log("age:",age);
-  let bgColor = "#ffc7d1";
-  if (numberAge > 6) bgColor = "#f1f13c";
-  if (numberAge > 9) bgColor = "#abfcab";
-  if (Number.isNaN(numberAge)) bgColor = "#b4d7e4;"
-  // console.log("bgColor:",bgColor)
-  return bgColor;
+//! Колір фону картки береться з theme.colors.card
+//! Використання в styled: background-color: ${getBgColorEmotion};
+export function getBgColorEmotion({ age, theme }) {
+  const numberAge = Number.parseInt(age);
+  const { young, older, old, allAge } = theme.colors.card;
+
+  if (Number.isNaN(numberAge)) return allAge;
+  if (numberAge > 9) return old;
+  if (numberAge > 6) return older;
+  return young;
 }
